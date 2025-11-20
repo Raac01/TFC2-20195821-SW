@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'utils/colors.dart';
 import 'screens/start_screen.dart';
-import 'screens/training_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/session_screen.dart';
 import 'screens/history_screen.dart';
 import 'screens/config_screen.dart';
+import 'screens/training_screen.dart';
+import 'dart:convert';
+import 'services/database.dart';
+import 'models/session.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();   // DB
   runApp(const AsistenteApp());
 }
 
@@ -19,7 +24,13 @@ class AsistenteApp extends StatelessWidget {
       title: 'Asistente Cognitivo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+        scaffoldBackgroundColor: AppColors.background,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.primary,
+          foregroundColor: Colors.white,
+          elevation: 2,
+        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),
       initialRoute: '/',

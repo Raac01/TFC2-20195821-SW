@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "asistente_esp32",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
